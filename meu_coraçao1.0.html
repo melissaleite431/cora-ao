@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eu Te Amo</title>
+    <style>
+        @keyframes explode {
+            0% {
+                transform: rotate(-45deg) scale(1);
+                opacity: 1;
+            }
+            25% {
+                transform: rotate(-45deg) scale(1.2);
+                opacity: 1;
+            }
+            50% {
+                transform: rotate(-45deg) scale(2);
+                opacity: 0.7;
+            }
+            75% {
+                transform: rotate(-45deg) scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: rotate(-45deg) scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes typing {
+            0% {
+                width: 0;
+            }
+            50% {
+                width: 100%;
+            }
+            100% {
+                width: 0;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        @keyframes kiss {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.3;
+                transform: scale(3) translateY(-50px);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0) translateY(50px);
+            }
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #000; /* Fundo preto */
+            font-family: Arial, sans-serif;
+            display: table;
+            width: 100%;
+            position: relative;
+            overflow: hidden; /* Impede que os beijos saiam da tela */
+        }
+
+        .container {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            width: 100%;
+            padding-top: 250px;
+        }
+
+        .heart {
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            position: relative;
+            transform: rotate(-45deg);
+            margin: 0 auto;
+            animation: explode 1s infinite; /* Aumentando a velocidade da animação */
+        }
+
+        .heart::before,
+        .heart::after {
+            content: '';
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .heart::before {
+            top: -75px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: 75px;
+            top: 0;
+        }
+
+        .text {
+            margin: 150px 0 0;
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            width: 0;
+            animation: typing 6s steps(30) infinite, blink 0.75s step-end infinite;
+        }
+
+        .text::after {
+            content: '|';
+            border-right: 2px solid #fff;
+            margin-left: 5px;
+        }
+
+        /* Estilo para os beijos espalhados pela tela */
+        .kiss {
+            position: absolute;
+            font-size: 30px;
+            color: #FF69B4; /* Cor de beijo (Rosa) */
+            animation: kiss 2s ease-out infinite;
+            z-index: 10;
+        }
+
+        /* Posições aleatórias para os beijos */
+        .kiss:nth-child(1) {
+            top: 5%;
+            left: 10%;
+            animation-duration: 4s;
+            animation-delay: 0s;
+        }
+
+        .kiss:nth-child(2) {
+            top: 15%;
+            left: 50%;
+            animation-duration: 5s;
+            animation-delay: 2s;
+        }
+
+        .kiss:nth-child(3) {
+            top: 25%;
+            left: 20%;
+            animation-duration: 4s;
+            animation-delay: 4s;
+        }
+
+        .kiss:nth-child(4) {
+            top: 45%;
+            left: 60%;
+            animation-duration: 4.5s;
+            animation-delay: 6s;
+        }
+
+        .kiss:nth-child(5) {
+            top: 70%;
+            left: 10%;
+            animation-duration: 4s;
+            animation-delay: 8s;
+        }
+
+        .kiss:nth-child(6) {
+            top: 35%;
+            left: 85%;
+            animation-duration: 5s;
+            animation-delay: 10s;
+        }
+
+        .kiss:nth-child(7) {
+            top: 75%;
+            left: 70%;
+            animation-duration: 3s;
+            animation-delay: 12s;
+        }
+
+        .kiss:nth-child(8) {
+            top: 80%;
+            left: 15%;
+            animation-duration: 6s;
+            animation-delay: 14s;
+        }
+
+        .kiss:nth-child(9) {
+            top: 20%;
+            left: 90%;
+            animation-duration: 3.5s;
+            animation-delay: 16s;
+        }
+
+        .kiss:nth-child(10) {
+            top: 10%;
+            left: 30%;
+            animation-duration: 4.5s;
+            animation-delay: 18s;
+        }
+
+        .kiss:nth-child(11) {
+            top: 50%;
+            left: 25%;
+            animation-duration: 5s;
+            animation-delay: 20s;
+        }
+
+        .kiss:nth-child(12) {
+            top: 50%;
+            left: 70%;
+            animation-duration: 5s;
+            animation-delay: 22s;
+        }
+
+        .kiss:nth-child(13) {
+            top: 60%;
+            left: 85%;
+            animation-duration: 4s;
+            animation-delay: 24s;
+        }
+
+        .kiss:nth-child(14) {
+            top: 40%;
+            left: 10%;
+            animation-duration: 5s;
+            animation-delay: 26s;
+        }
+
+        .kiss:nth-child(15) {
+            top: 30%;
+            left: 5%;
+            animation-duration: 4.5s;
+            animation-delay: 28s;
+        }
+
+        .kiss:nth-child(16) {
+            top: 75%;
+            left: 50%;
+            animation-duration: 4.5s;
+            animation-delay: 30s;
+        }
+
+        .kiss:nth-child(17) {
+            top: 15%;
+            left: 80%;
+            animation-duration: 6s;
+            animation-delay: 32s;
+        }
+
+        .kiss:nth-child(18) {
+            top: 5%;
+            left: 60%;
+            animation-duration: 5.5s;
+            animation-delay: 34s;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heart"></div>
+        <p class="text">Eu te amo, gatinho, muitinho</p>
+    </div>
+
+    <!-- Beijos espalhados aleatoriamente por toda a tela -->
+    <div class="kiss">💋</div>
+    <div class="kiss">💋</div>
+    <div class="kiss">💋</div>
+    <di
